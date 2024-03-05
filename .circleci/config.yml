@@ -29,6 +29,9 @@ jobs:
       - run:
           name: Hello world
           command: echo hello
+      - run :
+          name: Install sqllite dependency
+          command: sudo apt-get install libsqlite3-dev -y
       - ruby/install-deps
   deploy:
     docker:
