@@ -8,7 +8,6 @@ RUN apt-get install -yqq --no-install-recommends nodejs
 COPY . /usr/src/app
 
 ARG SECRET_KEY_BASE=static_secret_key
-ARG PORT=3000
 
 WORKDIR /usr/src/app
 
@@ -18,4 +17,4 @@ RUN gem install bundler:2.2.3
 RUN bundle install
 RUN rake db:migrate
 RUN rails assets:precompile
-CMD [ "rails", "server", "-p", "${PORT}"]
+CMD [ "rails", "server"]

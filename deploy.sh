@@ -16,4 +16,4 @@ then
     sudo docker rm $CONTAINER_NAME
 fi
 
-sudo docker run -e PORT=$PORT -p $PORT:$PORT -d --name $CONTAINER_NAME $IMAGE_NAME
+sudo docker run -p $PORT:3000 -d --name $CONTAINER_NAME $IMAGE_NAME
